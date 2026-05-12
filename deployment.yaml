@@ -19,7 +19,8 @@ spec:
           type: RuntimeDefault
       containers:
         - name: kvstore
-          image: kvstore:latest
+          image: iakov2393/kv-store:latest  
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           securityContext:
