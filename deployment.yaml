@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kvstore
+  namespace: student-iakov2393-mini-redis-grpc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kvstore
+  template:
+    metadata:
+      labels:
+        app: kvstore
+    spec:
+      containers:
+        - name: kvstore
+          image: kvstore:latest
+          ports:
+            - containerPort: 8000
